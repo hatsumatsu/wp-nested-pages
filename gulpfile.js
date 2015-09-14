@@ -27,7 +27,8 @@ var js_source = [
 	'assets/js/lib/nestedpages-factory.js',
 	'assets/js/lib/nestedpages.menu-links.js',
 	'assets/js/lib/nestedpages.menu-search.js',
-	'assets/js/lib/nestedpages.trash.js'
+	'assets/js/lib/nestedpages.trash.js',
+	'assets/js/lib/nestedpages.confirm-delete.js'
 ];
 var js_compiled = 'assets/js/';
 
@@ -51,7 +52,7 @@ gulp.task('scripts', function(){
 	return gulp.src(js_source)
 		.pipe(concat('nestedpages.min.js'))
 		.pipe(gulp.dest(js_compiled))
-		// .pipe(uglify())
+		.pipe(uglify())
 		.pipe(gulp.dest(js_compiled))
 		.pipe(notify('Nested Pages scripts compiles & compressed.'));
 });
